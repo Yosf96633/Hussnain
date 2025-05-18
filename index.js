@@ -5,7 +5,7 @@ import connectDB from "./src/config/connectDB.js";
 import authRoutes from "./src/routes/authRoutes.js";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-
+import gameRoutes from "./src/routes/gameRoutes.js"
 
 // Load env vars
 dotenv.config();
@@ -27,6 +27,7 @@ connectDB();
 
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api" , gameRoutes)
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
